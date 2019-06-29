@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol MenuBarListener: class {
+    func didSelectMenuOption(option: Int)
+}
+
 class MenuBar: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    weak var delegate: MenuBarListener?
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -24,8 +30,6 @@ class MenuBar: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     let labelArray = ["BARS", "CLUBS", "ALL"]
     
     var hBarLeftAnchorConstraint: NSLayoutConstraint?
-    
-    var currentIndex: Int = 2
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -64,9 +68,8 @@ class MenuBar: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         
         UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {self.layoutIfNeeded()}, completion: nil)
         
-        currentIndex = indexPath.item
-        print(currentIndex)
-        
+        // for talking to MapViewController
+        delegate?.didSelectMenuOption(option: indexPath.item)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

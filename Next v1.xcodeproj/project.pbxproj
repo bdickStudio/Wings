@@ -11,7 +11,9 @@
 		791554E222C3322B00B70274 /* google json in Resources */ = {isa = PBXBuildFile; fileRef = 791554E122C3322B00B70274 /* google json */; };
 		79180D4422BE3B0C00ADF70F /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79180D4322BE3B0C00ADF70F /* MenuBar.swift */; };
 		7961245F22C1F788004783B5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7961245E22C1F788004783B5 /* Extensions.swift */; };
-		7961246A22C25582004783B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7961246922C25581004783B5 /* Assets.xcassets */; };
+		7970F8F122C70A76004DC994 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7970F8F022C70A76004DC994 /* MapView.swift */; };
+		7970F8F322C722DC004DC994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7970F8F222C722DB004DC994 /* Assets.xcassets */; };
+		7970F8F522C72D76004DC994 /* infoLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7970F8F422C72D76004DC994 /* infoLauncher.swift */; };
 		79D708BC22AE9CA7002DCAA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D708BB22AE9CA7002DCAA6 /* AppDelegate.swift */; };
 		79D708BE22AE9CA7002DCAA6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D708BD22AE9CA7002DCAA6 /* MapViewController.swift */; };
 		79D708C122AE9CA7002DCAA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79D708BF22AE9CA7002DCAA6 /* Main.storyboard */; };
@@ -29,7 +31,9 @@
 		791554E122C3322B00B70274 /* google json */ = {isa = PBXFileReference; lastKnownFileType = text; path = "google json"; sourceTree = "<group>"; };
 		79180D4322BE3B0C00ADF70F /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		7961245E22C1F788004783B5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		7961246922C25581004783B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7970F8F022C70A76004DC994 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		7970F8F222C722DB004DC994 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7970F8F422C72D76004DC994 /* infoLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoLauncher.swift; sourceTree = "<group>"; };
 		79D708B822AE9CA7002DCAA6 /* Next v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Next v1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79D708BB22AE9CA7002DCAA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79D708BD22AE9CA7002DCAA6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 				79180D4322BE3B0C00ADF70F /* MenuBar.swift */,
 				79E58F1A22B4C6D900493914 /* PlacePreviewView.swift */,
 				79E58F1C22B4CFDE00493914 /* CustomMarkerView.swift */,
+				7970F8F022C70A76004DC994 /* MapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -92,6 +97,7 @@
 			children = (
 				79E58F1E22B4D42800493914 /* DetailsViewController.swift */,
 				79D708BD22AE9CA7002DCAA6 /* MapViewController.swift */,
+				7970F8F422C72D76004DC994 /* infoLauncher.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -135,7 +141,7 @@
 		79D708BA22AE9CA7002DCAA6 /* Next v1 */ = {
 			isa = PBXGroup;
 			children = (
-				7961246922C25581004783B5 /* Assets.xcassets */,
+				7970F8F222C722DB004DC994 /* Assets.xcassets */,
 				7961246222C1F7C2004783B5 /* Controllers */,
 				7961246122C1F7AB004783B5 /* Views */,
 				7961246022C1F799004783B5 /* Helpers */,
@@ -219,8 +225,8 @@
 				79D708D322AE9DD6002DCAA6 /* Podfile in Resources */,
 				79DF2C8622AF573700BE4D32 /* style.json in Resources */,
 				79D708C122AE9CA7002DCAA6 /* Main.storyboard in Resources */,
+				7970F8F322C722DC004DC994 /* Assets.xcassets in Resources */,
 				791554E222C3322B00B70274 /* google json in Resources */,
-				7961246A22C25582004783B5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +286,8 @@
 				79E58F1F22B4D42800493914 /* DetailsViewController.swift in Sources */,
 				79E58F1B22B4C6D900493914 /* PlacePreviewView.swift in Sources */,
 				79180D4422BE3B0C00ADF70F /* MenuBar.swift in Sources */,
+				7970F8F522C72D76004DC994 /* infoLauncher.swift in Sources */,
+				7970F8F122C70A76004DC994 /* MapView.swift in Sources */,
 				79E58F1D22B4CFDE00493914 /* CustomMarkerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
