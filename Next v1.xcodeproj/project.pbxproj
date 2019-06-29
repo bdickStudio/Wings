@@ -14,6 +14,8 @@
 		7970F8F122C70A76004DC994 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7970F8F022C70A76004DC994 /* MapView.swift */; };
 		7970F8F322C722DC004DC994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7970F8F222C722DB004DC994 /* Assets.xcassets */; };
 		7970F8F522C72D76004DC994 /* infoLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7970F8F422C72D76004DC994 /* infoLauncher.swift */; };
+		7970F8F722C736E2004DC994 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7970F8F622C736E2004DC994 /* InfoCell.swift */; };
+		7970F8F922C7373E004DC994 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7970F8F822C7373E004DC994 /* BaseCell.swift */; };
 		79D708BC22AE9CA7002DCAA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D708BB22AE9CA7002DCAA6 /* AppDelegate.swift */; };
 		79D708BE22AE9CA7002DCAA6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D708BD22AE9CA7002DCAA6 /* MapViewController.swift */; };
 		79D708C122AE9CA7002DCAA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79D708BF22AE9CA7002DCAA6 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 		7970F8F022C70A76004DC994 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		7970F8F222C722DB004DC994 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7970F8F422C72D76004DC994 /* infoLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoLauncher.swift; sourceTree = "<group>"; };
+		7970F8F622C736E2004DC994 /* InfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
+		7970F8F822C7373E004DC994 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		79D708B822AE9CA7002DCAA6 /* Next v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Next v1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79D708BB22AE9CA7002DCAA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79D708BD22AE9CA7002DCAA6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +81,7 @@
 				7961246322C1F7FF004783B5 /* StoryBoards */,
 				7961245E22C1F788004783B5 /* Extensions.swift */,
 				791554E122C3322B00B70274 /* google json */,
+				7970F8F822C7373E004DC994 /* BaseCell.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -88,6 +93,7 @@
 				79E58F1A22B4C6D900493914 /* PlacePreviewView.swift */,
 				79E58F1C22B4CFDE00493914 /* CustomMarkerView.swift */,
 				7970F8F022C70A76004DC994 /* MapView.swift */,
+				7970F8F622C736E2004DC994 /* InfoCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -283,12 +289,14 @@
 				79D708C422AE9CA7002DCAA6 /* Next_v1.xcdatamodeld in Sources */,
 				79D708BC22AE9CA7002DCAA6 /* AppDelegate.swift in Sources */,
 				7961245F22C1F788004783B5 /* Extensions.swift in Sources */,
+				7970F8F922C7373E004DC994 /* BaseCell.swift in Sources */,
 				79E58F1F22B4D42800493914 /* DetailsViewController.swift in Sources */,
 				79E58F1B22B4C6D900493914 /* PlacePreviewView.swift in Sources */,
 				79180D4422BE3B0C00ADF70F /* MenuBar.swift in Sources */,
 				7970F8F522C72D76004DC994 /* infoLauncher.swift in Sources */,
 				7970F8F122C70A76004DC994 /* MapView.swift in Sources */,
 				79E58F1D22B4CFDE00493914 /* CustomMarkerView.swift in Sources */,
+				7970F8F722C736E2004DC994 /* InfoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

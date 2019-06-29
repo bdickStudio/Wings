@@ -12,6 +12,24 @@ import GooglePlaces
 
 var APIKEY = "AIzaSyCsafByyASM6N5ZqmgJyHBttYpCZn0R4Mk"
 
+struct Place {
+    let name: String
+    let id: String
+    let lat: Double
+    let lng: Double
+    let address: String
+    var type: String
+    
+    init(n: String, i: String, lt: Double, lg: Double, a: String, t: String) {
+        name = n
+        id = i
+        lat = lt
+        lng = lg
+        address = a
+        type = t
+    }
+}
+
 class MapView: UIView, GMSMapViewDelegate {
     
     // setup location manager
@@ -30,8 +48,8 @@ class MapView: UIView, GMSMapViewDelegate {
     var zoomLevel: Float = 15
     
     // arrays for holding nearby places
-    var nearbyBars: [place] = []
-    var nearbyNightClubs: [place] = []
+    var nearbyBars: [Place] = []
+    var nearbyNightClubs: [Place] = []
     
     // A default location to use when location permission is not granted.
     let defaultLocation = CLLocation(latitude: -33.667677, longitude: 151.305951)
@@ -147,22 +165,31 @@ class MapView: UIView, GMSMapViewDelegate {
                             if let locationDictionary = result as? [String : Any] {
                                 let geometry = locationDictionary["geometry"]! as! [String : Any]
                                 let name = locationDictionary["name"] as! String
+                                let id = locationDictionary["place_id"] as! String
                                 let address = locationDictionary["vicinity"] as! String
                                 let location = geometry["location"]! as! [String : Any]
                                 let lat = location["lat"] as! Double
                                 let long = location["lng"] as! Double
                                 let types = locationDictionary["types"] as! [String]
                                 
+                                let openNowDict = locationDictionary["opening_hours"] as! [String : Any]
+                                let openNow = openNowDict["open_now"] as! Bool
+                                
                                 // create new place with variables
-                                let newVenue = place(n:name, lt:lat, lg:long, a:address)
+                                var newVenue = Place(n:name, i:id, lt:lat, lg:long, a:address, t:"")
                                 
-                                // add place to neary places array
-                                if types.contains("night_club") {
-                                    self.nearbyNightClubs.append(newVenue)
-                                }
+                                // if place is open add to appropriate array
+                                if openNow {
                                 
-                                if types.contains("bar") && !(types.contains("night_club")) {
-                                    self.nearbyBars.append(newVenue)
+                                    if types.contains("night_club") {
+                                        newVenue.type = "record.png"
+                                        self.nearbyNightClubs.append(newVenue)
+                                    }
+                                
+                                    if types.contains("bar") && !(types.contains("night_club")) {
+                                        newVenue.type = "cocktail.png"
+                                        self.nearbyBars.append(newVenue)
+                                    }
                                 }
                             }
                         }
@@ -170,8 +197,8 @@ class MapView: UIView, GMSMapViewDelegate {
                 }
                 
                 // print count of nearby places
-                print("NEARBY Night clubs: \(self.nearbyNightClubs.count)")
-                print("NEARBY Bars: \(self.nearbyBars.count)")
+                //print("NEARBY Night clubs: \(self.nearbyNightClubs.count)")
+                //print("NEARBY Bars: \(self.nearbyBars.count)")
                 self.dispatchGroup.leave()
                 
             } else {
@@ -183,7 +210,7 @@ class MapView: UIView, GMSMapViewDelegate {
     
     func drawNearbyBars() {
         
-        print("drawing bars")
+        //print("drawing bars")
         // if there is at least one bar
         if nearbyBars.count != 0 {
             
@@ -193,7 +220,7 @@ class MapView: UIView, GMSMapViewDelegate {
                 let marker = GMSMarker(position: position)
                 marker.title = p.name
                 marker.snippet = p.address
-                let img = UIImage(named: "cocktail.png")
+                let img = UIImage(named: p.type)
                 marker.icon = img
                 marker.map = mapView
             }
@@ -201,7 +228,7 @@ class MapView: UIView, GMSMapViewDelegate {
     }
     
     func drawNearbyNightClubs() {
-        print("drawing night clubs")
+        //print("drawing night clubs")
         // if there is at least one night club
         if nearbyNightClubs.count > 0 {
             
@@ -209,13 +236,11 @@ class MapView: UIView, GMSMapViewDelegate {
             for p in nearbyNightClubs {
                 let position = CLLocationCoordinate2D(latitude: p.lat, longitude: p.lng)
                 let marker = GMSMarker(position: position)
-                marker.title = p.name
-                marker.snippet = p.address
-                let img = UIImage(named: "record.png")
+                //marker.title = p.name
+                //marker.snippet = p.address
+                let img = UIImage(named: p.type)
                 marker.icon = img
-                
                 marker.map = self.mapView
-                
             }
         }
     }
@@ -228,8 +253,33 @@ class MapView: UIView, GMSMapViewDelegate {
     let infoLauncher = InfoLauncher()
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+    
+        let allNearByPlaces = nearbyBars + nearbyNightClubs
+        var place: Place?
         
-        infoLauncher.launch()
+        for p in allNearByPlaces {
+            if p.lat == marker.position.latitude && p.lng == marker.position.longitude {
+                place = p
+            }
+        }
+        
+        // Specify the place data types to return.
+        let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |
+            UInt(GMSPlaceField.placeID.rawValue) | UInt(GMSPlaceField.openingHours.rawValue))!
+        
+        placesClient?.fetchPlace(fromPlaceID: place!.id, placeFields: fields, sessionToken: nil, callback: {
+            (place: GMSPlace?, error: Error?) in
+            if let error = error {
+                print("An error occurred: \(error.localizedDescription)")
+                return
+            }
+            if let place = place {
+                //print(place.openingHours)
+                print("The selected place is: \(place.name!)")
+            }
+        })
+        
+        infoLauncher.launch(mv: self.mapView, place: place!)
         
         return false
     }

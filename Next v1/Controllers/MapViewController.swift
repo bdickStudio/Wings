@@ -5,25 +5,9 @@
 //  Created by Andrew Brown on 10/6/19.
 //  Copyright © 2019 Andrew Brown. All rights reserved.
 //
-
-
 // https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.667677,151.305951&radius=1000&type=bar&key=AIzaSyCsafByyASM6N5ZqmgJyHBttYpCZn0R4Mk
 
 import UIKit
-
-struct place {
-    let name: String
-    let lat: Double
-    let lng: Double
-    let address: String
-    
-    init(n: String, lt: Double, lg: Double, a: String) {
-        name = n
-        lat = lt
-        lng = lg
-        address = a
-    }
-}
 
 class MapViewController: UIViewController, MenuBarListener {
     
