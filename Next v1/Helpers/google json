@@ -1,0 +1,150 @@
+
+{
+    "html_attributions": [],
+    "results":
+    [{
+        "geometry":
+        {
+            "location":
+            {
+                "lat": -33.6604484,
+                "lng": 151.3089709
+            },
+            "viewport":
+            {
+                "northeast":
+                {
+                    "lat": -33.6590972697085,
+                    "lng": 151.3104990802915
+                },
+                "southwest":
+                {
+                    "lat": -33.6617952302915,
+                    "lng": 151.3078011197085
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+        "name": "The Newport",
+        "opening_hours":
+        {
+            "open_now": true
+        },
+        "photos":
+        [{
+            "height": 1701,
+            "html_attributions":
+            [
+                "\u003ca href=\"https://maps.google.com/maps/contrib/103236686207624988253/photos\"\u003eThe Newport\u003c/a\u003e"
+            ],
+            "photo_reference": "CmRaAAAAaIKJMwY2_J7444Sp4b6d1nl3LqCRxpHFyFVSJNgIUvCX-07Grb1kThrBSqYfTq08RqJJ1C4nM935cITmwx6qOt8EHW0Wgdwy8Xr6CqIa3xeyGBILJ7VBYiADZNWhzir2EhCg6aPo7ZUsNZ7rmFSs5xc4GhQuTpzQ8r13qMcj4SZWhUArkni54Q",
+            "width": 2437
+        }],
+        "place_id": "ChIJQ74bH9WscmsRVyLE6jHtEZg",
+        "plus_code":
+        {
+            "compound_code": "88Q5+RH Newport, New South Wales, Australia",
+            "global_code": "4RRH88Q5+RH"
+        },
+        "price_level": 2,
+        "rating": 4.3,
+        "reference": "ChIJQ74bH9WscmsRVyLE6jHtEZg",
+        "scope": "GOOGLE",
+        "types": ["bar", "restaurant", "food", "point_of_interest", "establishment"],
+        "user_ratings_total": 2109,
+        "vicinity": "2 Kalinya Street, Newport"
+    },
+    {
+        "geometry":
+        {
+            "location":
+            {
+                "lat": -33.6764524,
+                "lng": 151.3058729
+            },
+            "viewport":
+            {
+                "northeast":
+                {
+                    "lat": -33.6751962197085,
+                    "lng": 151.3069664802915
+                },
+                "southwest":
+                {
+                    "lat": -33.6778941802915,
+                    "lng": 151.3042685197085
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
+        "name": "Park House",
+        "opening_hours":
+        {
+            "open_now": true
+        },
+        "photos":
+        [{
+            "height": 4724,
+            "html_attributions":
+            [
+                "\u003ca href=\"https://maps.google.com/maps/contrib/116438755832449054750/photos\"\u003ePark House\u003c/a\u003e"
+            ],
+            "photo_reference": "CmRaAAAA5wiR-6NnvJCpzecEvo2QiwayzGcuY1w-KZufUU7m6PbbnKICwBXwgt2wHKokaIjvSAvGLBCjvvTO7EozSGRzCyUzs39pQBL7of-JTZ3fYekxX9bZMURxtl4V8d_eI7vJEhAFtJUPHlQJw_KMHmszmlc6GhRgcIFD08Ia9ZsV3M5YFJjymKzOMg",
+            "width": 7236
+        }],
+        "place_id": "ChIJJ9HL5aJUDWsROgHRWvQkuG8",
+        "plus_code":
+        {
+            "compound_code": "88F4+C8 Mona Vale, New South Wales, Australia",
+            "global_code": "4RRH88F4+C8"
+        },
+        "price_level": 2,
+        "rating": 3.9,
+        "reference": "ChIJJ9HL5aJUDWsROgHRWvQkuG8",
+        "types": ["restaurant", "bar", "food", "point_of_interest", "establishment"],
+        "user_ratings_total": 302,
+        "vicinity": "2 Park Street, Mona Vale"
+    },
+    {
+        "geometry":
+        {
+            "location":
+            {
+                "lat": -33.67624449999999,
+                "lng": 151.3041524
+            },
+            "viewport":
+            {
+                "northeast":
+                {
+                    "lat": -33.67476306970849,
+                    "lng": 151.3056274302915
+                },
+                "southwest":
+                {
+                    "lat": -33.67746103029149,
+                    "lng": 151.3029294697085
+                }
+            }
+        },
+        "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/bar-71.png",
+        "id": "97ef245a97ddf299e27421dddbc8c3e4c650959a",
+        "name": "Mini Bar at The Inch Cafe Restaurant",
+        "opening_hours":
+        {
+            "open_now": true
+        },
+        "place_id": "ChIJ4zXTo6JUDWsRcEbH60qAzw4",
+        "plus_code":
+        {
+            "compound_code": "88F3+GM Mona Vale, New South Wales, Australia",
+            "global_code": "4RRH88F3+GM"
+        },
+        "rating": 5,
+        "reference": "ChIJ4zXTo6JUDWsRcEbH60qAzw4",
+        "types": ["bar", "point_of_interest", "establishment"],
+        "user_ratings_total": 2,
+        "vicinity": "1 Park Street, Mona Vale"
+    }],
+    "status": "OK"
+}
